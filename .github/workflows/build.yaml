@@ -19,7 +19,7 @@ jobs:
         with:
           length: 7
 
-      - name: Login to Docker
+      - name: Login to Docker [ap-southeast-1]
         uses: docker/login-action@v2
         with:
           registry: registry.ap-southeast-1.aliyuncs.com
@@ -34,7 +34,7 @@ jobs:
           tags: registry.ap-southeast-1.aliyuncs.com/kemono/maintenance:main-${{ env.SHA }}
           file: Dockerfile
 
-      - name: Login to Docker
+      - name: Login to Docker [cn-shenzhen]
         uses: docker/login-action@v2
         with:
           registry: registry.cn-shenzhen.aliyuncs.com
