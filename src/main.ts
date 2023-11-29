@@ -14,5 +14,9 @@ function checkIsPageAvailable() {
     })
 }
 
-// check if page is available every 10 seconds
-setInterval(checkIsPageAvailable, 10 * 1000)
+// fetch data each time when the page is in the foreground.
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    checkIsPageAvailable();
+  }
+})
